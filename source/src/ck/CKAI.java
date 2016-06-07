@@ -22,6 +22,8 @@ public class CKAI {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello, my name is cKAI");
+		
+		CKAI_personality personality = new CKAI_personality();
 
 	}
 
