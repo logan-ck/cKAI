@@ -3,6 +3,8 @@
  */
 package ck;
 
+import java.util.Scanner;
+
 /**
  * @author	loganCk
  * @desc	cKAI is an Intelligent AI built with Java. This bot will know human interaction, and communication. Using a	
@@ -20,10 +22,23 @@ public class CKAI {
 	 * 
 	 * 
 	 */
+	
+	static boolean waiting;
+	
 	public static void main(String[] args) {
-		System.out.println("Hello, my name is cKAI");
+		System.out.println("Hello, my name is cKAI. \n");
 		
 		CKAI_personality personality = new CKAI_personality();
+		Scanner reader 				 = new Scanner(System.in); 
+		commands commands 			 = new commands();
+		
+		
+		while (waiting == true){
+			
+			commands.say(" > How are you going today?");
+			waiting = false;
+		}
+		
 
 	}
 
