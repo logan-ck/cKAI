@@ -32,11 +32,16 @@ public class CKAI {
 		Scanner reader 				 = new Scanner(System.in); 
 		commands commands 			 = new commands();
 		
-		
-		while (waiting == true){
-			
-			commands.say(" > How are you going today?");
-			waiting = false;
+		private talk {
+			while (waiting == true){
+				
+				commands.say(" > How are you going today?");
+				
+				commands.say(" > ");
+				String input = reader.NextString();
+				
+				waiting = false;
+			}
 		}
 		
 

@@ -51,13 +51,13 @@ public class CKAI_personality {
 		String cKAI_GRANDMA;
 		String cKAI_MOM;
 		String cKAI_DAD;
-		String cKAI SISTER;
-		String cKAI BROTHER;
-		String cKAI CAT;
-		String cKAI DOG;
-		String cKAI WIFE;
-		String cKAI SON;
-		String cKAI DAUGHTER;
+		String cKAI_SISTER;
+		String cKAI_BROTHER;
+		String cKAI_CAT;
+		String cKAI_DOG;
+		String cKAI_WIFE;
+		String cKAI_SON;
+		String cKAI_DAUGHTER;
 	}
 
 	private static void Personality() {
