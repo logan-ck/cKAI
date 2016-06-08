@@ -1,5 +1,8 @@
 package ck;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 
@@ -42,6 +45,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.UIManager;
@@ -52,25 +56,54 @@ public class cKAI extends JPanel {
     public cKAI() {
     	
         super(new GridLayout(8,8));  //3 rows, 1 column
-        JLabel talk;
-        JTextArea card = new JTextArea(1, 1);
-        JButton btnNewButton = new JButton("Submit!");
-        JLabel title = new JLabel("cKAI v1.0");
-        title.setFont(new Font("Sans Serif", Font.BOLD, 18));
+        JTextArea talk;
+		JLabel title;
+        talk = new JTextArea(15, 31);
+        JTextArea card = new JTextArea(15, 31);
+        JButton btnNewButton, aboutBtn;
+        btnNewButton = new JButton("Submit!");
+        aboutBtn = new JButton("About me");
+        setLayout(new BorderLayout());
         
-        talk = new JLabel("Hello, my name is cKAI. How are you today?", JLabel.LEFT);
+        title = new JLabel("cKAI v1.0");
+        title.setFont(new Font("Sans Serif", Font.BOLD, 22));
+        title.setHorizontalAlignment( SwingConstants.CENTER );
+        title.setBackground(Color.white);
         
-        add(title);
-        add(talk);
-        add(new JScrollPane(card));
-        add(btnNewButton);
-        btnNewButton.addActionListener(new ActionListener() {
+		
+        aboutBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        	     if(card.getText().equals("1")){
-        	          card.setText("response");
-        	     }
+        	     
+        	     
         	}
         });
+        
+        
+        
+        //talk = new JLabel("Hello, my name is cKAI. How are you today?", JLabel.LEFT);
+        //talk.setVerticalAlignment(SwingConstants.TOP);
+        talk.setFont(new Font("Courier New", Font.BOLD, 11));
+        talk.setForeground(Color.red);
+        talk.setText("Hello, my name is cKAI. How are you?");
+        
+        card.setBackground(Color.gray);
+        card.setForeground(Color.white);
+        
+        add(title, JLabel.RIGHT);
+        add(aboutBtn, JButton.LEFT);
+        add(new JScrollPane(talk));
+        
+        add(new JScrollPane(card), BorderLayout.AFTER_LINE_ENDS);
+        add(btnNewButton, BorderLayout.PAGE_END);
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        	     if(card.getText().equals("hey")){
+        	          talk.setText("How are you?");
+        	     }
+        	     
+        	}
+        });
+        
     }
  
     /**
@@ -99,8 +132,9 @@ public class cKAI extends JPanel {
             public void run() {
         //Turn off metal's use of bold fonts
             UIManager.put("swing.boldMetal", Boolean.FALSE);
-                 
-        createAndShowGUI();
+            
+            
+            createAndShowGUI();
             }
         });
     }
