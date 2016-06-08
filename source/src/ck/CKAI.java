@@ -5,7 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 
 /*
- * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1995, 2008
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -51,11 +51,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.SwingUtilities;
- 
-/*
- * LabelDemo.java needs one other file:
- *   images/middle.gif
- */
+
 public class cKAI extends JPanel {
     public cKAI() {
     	
