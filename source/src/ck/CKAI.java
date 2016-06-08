@@ -1,8 +1,7 @@
 package ck;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 
 /*
  * Copyright (c) 1995, 2008
@@ -39,30 +38,29 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.JFrame;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.SwingUtilities;
 
+@SuppressWarnings("serial")
 public class cKAI extends JPanel {
     public cKAI() {
     	
-        super(new GridLayout(3,1));  //3 rows, 1 column
-        JLabel talk, myTextField, label3;
-        JTextArea card = new JTextArea(1, 5);
+        super(new GridLayout(8,8));  //3 rows, 1 column
+        JLabel talk;
+        JTextArea card = new JTextArea(1, 1);
         JButton btnNewButton = new JButton("Submit!");
+        JLabel title = new JLabel("cKAI v1.0");
+        title.setFont(new Font("Sans Serif", Font.BOLD, 18));
         
         talk = new JLabel("Hello, my name is cKAI. How are you today?", JLabel.LEFT);
         
-        
+        add(title);
         add(talk);
         add(new JScrollPane(card));
         add(btnNewButton);
@@ -82,9 +80,10 @@ public class cKAI extends JPanel {
      */
     private static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("cKAI Artificial Intelligence | # 000000-01 'The Beginning'");
+        JFrame frame = new JFrame("cKAI v1.0");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(700, 400));
+       
         //Add content to the window.
         frame.add(new cKAI());
  
